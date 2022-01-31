@@ -9,8 +9,9 @@ while True:
 finalcmd = str()
 if len(commands) > 0:
   for command in commands:
-    finalcmd += (command + ' and ')
+      finalcmd += (command + ' and ') if command != commands[-1] else command
 else:
   finalcmd = 'True'
 filteredWords = [word for word in allWords if eval(finalcmd)]
-print(word for word in filteredWords)
+for word in filteredWords:
+  print(word)
